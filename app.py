@@ -1,5 +1,5 @@
 from services.smile import Smile
-
+import time
 
 # gustavomaedo
 class App:
@@ -9,14 +9,47 @@ class App:
         self.smile.set_size(16, 16)
         self.smile.set_icon("▓")
         self.smile.set_empty_icon(".")
-        self.add_coordinates()
-        self.smile.create_image()
-        self.smile.print_image()
+        for x in range(8):
+            self.smile.clear_coordinates()
+            self.add_coordinates(x, 0)
+            self.smile.create_image()
+            self.smile.print_image()
+            time.sleep(0.1)
+        for y in range(8):
+            self.smile.clear_coordinates()
+            self.add_coordinates(7, y)
+            self.smile.create_image()
+            self.smile.print_image()
+            time.sleep(0.1)
+        for x in range(8):
+            self.smile.clear_coordinates()
+            self.add_coordinates(8-x, 7)
+            self.smile.create_image()
+            self.smile.print_image()
+            time.sleep(0.1)
+        for y in range(8):
+            self.smile.clear_coordinates()
+            self.add_coordinates(0, 8-y)
+            self.smile.create_image()
+            self.smile.print_image()
+            time.sleep(0.1)
+        for x in range(10):
+            self.smile.clear_coordinates()
+            self.add_coordinates(12-x, 4)
+            self.smile.create_image()
+            self.smile.print_image()
+            time.sleep(0.1)
+        for y in range(15):
+            self.smile.clear_coordinates()
+            self.add_coordinates(6, 20-y)
+            self.smile.create_image()
+            self.smile.print_image()
+            time.sleep(0.1)
 
-    def add_coordinates(self):
+    def add_coordinates(self, x, y):
         # position
-        x = 4
-        y = 4
+        # x = 4
+        # y = 4
         # y = 0
         self.smile.add_coordinate(x + 2, y + 0)
         self.smile.add_coordinate(x + 3, y + 0)

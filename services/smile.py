@@ -23,6 +23,10 @@ class Smile:
         if self.is_set:
             self.no_icon = " "+icon+" "
 
+    def clear_coordinates(self):
+        if self.is_set:
+            self.coordinates.clear()
+
     def add_coordinate(self, x, y):
         if self.is_set:
             coordinate = {
